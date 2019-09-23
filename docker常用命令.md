@@ -46,7 +46,7 @@ docker ps -l                 最后一次运行的进程
 ## 13.镜像拉取
 `docker pull [镜像id 或者 仓库名]`
 ## 14.将自己当前有的容器制作为镜像
-`docker commit [容器id(前4位就够了) 或者 name] [要生成的镜像名称]`
+`docker commit [容器id(前4位就够了) 或者 name] [要生成的镜像名称]`  
 # 对docker外部的命令
 ```
 systemctl start docker		启动 docker
