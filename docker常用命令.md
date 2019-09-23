@@ -7,27 +7,63 @@ docker ps -f status=exited   暂停的进行,created|restarting|running|paused|e
 docker ps -l                 最后一次运行的进程
 ```
 ```
-Usage: docker ps [OPTIONS]  
+-a, --all       显示所有容器(默认显示正在运行)
 
-Options:
-  -a, --all             Show all containers (default shows just running)
-  -f, --filter value    Filter output based on conditions provided (default [])
-                        - exited=<int> an exit code of <int>
-                        - label=<key> or label=<key>=<value>
-                        - status=(created|restarting|running|paused|exited)
-                        - name=<string> a container's name
-                        - id=<ID> a container's ID
-                        - before=(<container-name>|<container-id>)
-                        - since=(<container-name>|<container-id>)
-                        - ancestor=(<image-name>[:tag]|<image-id>|<image@digest>)
-                          containers created from an image or a descendant.
-      --format string   Pretty-print containers using a Go template
-      --help            Print usage
-  -n, --last int        Show n last created containers (includes all states) (default -1)
-  -l, --latest          Show the latest created container (includes all states)
-      --no-trunc        Don't truncate output
-  -q, --quiet           Only display numeric IDs
-  -s, --size            Display total file sizes
+-n              显示最后创建的n个容器(包括所有状态)(默认值-1)
+                示例：docker ps -n2
+
+-l,--latest     显示最新创建的容器(包括所有状态)
+
+-q, --quiet     只显示数字id    
+
+-s, --size      显示总文件大小
+
+--no-trunc      不截断输出
+
+-f, --filter    根据提供的条件过滤输出
+                过滤条件如下：
+                Filter | Description
+                ---|---
+                id      | 容器的ID
+                name    | 容器的Name
+                label   | 表示键或键值对的任意字符串。表示为<key>或<key>=<value>
+                exited  | 表示容器退出代码的整数。只有对所有人有用。
+                status  | created,restarting,running,removing,paused,exited,dead之一
+                ancestor| 筛选指定镜像的容器，例如<image-name>[:<tag>],<image id>, or <image@digest>
+                before or since | 筛选在给定容器ID或名称之前或之后创建的容器
+                volume  | 运行已挂载给定卷或绑定挂载的容器的筛选器。
+                network | 过滤器运行连接到给定网络的容器。
+                publish or expose | 筛选发布或公开给定端口的容器,例如<port>[/<proto>] or <startport-endport>/[<proto>]
+                health  | 根据容器的健康检查状态过滤容器，例如starting, healthy, unhealthy or none.
+                isolation | 仅Windows守护进程，例如default, process, or hyperv.
+                is-task | 筛选服务的“任务”容器。布尔选项（true or false）
+
+                示例：
+                docker ps -f name=^'modality'
+                docker ps --filter name=nginx
+                docker ps -a --filter exited=0
+                docker ps --filter status=running
+                docker ps --filter expose=3306
+    --format    使用Go模板漂亮地打印容器
+                过滤条件如下：
+                Placeholder | Description
+                ---|---
+                .ID         | 容器的ID
+                .Image      | 镜像的ID
+                .Command    | 引用命令
+                .CreatedAt  | 创建容器的时间
+                .RunningFor | 自容器启动以来的运行时长
+                .Ports      | 暴露的端口
+                .Status     | 容器状态
+                .Size       | 容器的磁盘大小
+                .Names      | 容器的名称
+                .Labels     | 分配给容器的所有标签
+                .Label      | 此容器的特定标签的值,例如`{{.Label "com.docker.swarm.cpu"}}`
+                .Mounts     | 容器挂载的卷
+                .Networks   | 容器所用的网络名称
+
+                示例：
+                docker ps --format "{{.ID}}: {{.Names}}: {{.Command}}"
 ```
 ## 2.运行暂停的容器: 
 `docker start [容器id(前4位就够了) 或者 name]`
