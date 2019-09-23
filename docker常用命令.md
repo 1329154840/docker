@@ -9,13 +9,13 @@
 ## 查看容器日志: 
  `docker logs [容器id(前4位就够了) 或者 name]`
 ## 删除对应进程中的容器: 
-`先stop 然后 rm [容器id(前4位就够了) 或者 name]` 
-### 注意这里只是删除进程不是移除对应镜像,rm后ps -a就没了
+`先stop 然后 rm [容器id(前4位就够了) 或者 name]`   
+注意这里只是删除进程不是移除对应镜像,rm后ps -a就没了
 ## 删除镜像： 
 `rmi [镜像id 或者 仓库id]`
 ## 进入对应容器里的bash: 
-`exec -it [容器id(前4位就够了) 或者 name] /bin/bash` 
+`exec -it [容器id(前4位就够了) 或者 name] /bin/bash`   
 注意这里有4种进入方式这是其中一种
 ## 运行新的images: 
-`run -d -p --name [容器id]` 
+`run -d -p --name [容器id]`   
 d是后台运行 p是端口映射[当前pc端口]:[容器内部端口] name是进程容器名称，具体还有别的参数
