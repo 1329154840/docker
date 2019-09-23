@@ -42,7 +42,7 @@ docker ps -l                 最后一次运行的进程
   接收容器文件到本机
 ## 12.容器或镜像元数据(可查ip）
 `docker inspect [容器id(前4位就够了) 或者 name]`  
-  --format 输出对应json value，例如 --format='{{NetworkSetting。IPAddress}}'
+  --format 输出对应json value，例如 --format='{{.NetworkSettings.IPAddress}}'
 ## 13.镜像拉取
 `docker pull [镜像id 或者 仓库名]`
 ## 14.将自己当前有的容器制作为镜像
