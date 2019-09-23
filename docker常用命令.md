@@ -6,6 +6,28 @@ docker ps -a                 所有进程
 docker ps -f status=exited   暂停的进行,created|restarting|running|paused|exited
 docker ps -l                 最后一次运行的进程
 ```
+```
+Usage: docker ps [OPTIONS]
+Options:
+  -a, --all             Show all containers (default shows just running)
+  -f, --filter value    Filter output based on conditions provided (default [])
+                        - exited=<int> an exit code of <int>
+                        - label=<key> or label=<key>=<value>
+                        - status=(created|restarting|running|paused|exited)
+                        - name=<string> a container's name
+                        - id=<ID> a container's ID
+                        - before=(<container-name>|<container-id>)
+                        - since=(<container-name>|<container-id>)
+                        - ancestor=(<image-name>[:tag]|<image-id>|<image@digest>)
+                          containers created from an image or a descendant.
+      --format string   Pretty-print containers using a Go template
+      --help            Print usage
+  -n, --last int        Show n last created containers (includes all states) (default -1)
+  -l, --latest          Show the latest created container (includes all states)
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only display numeric IDs
+  -s, --size            Display total file sizes
+```
 ## 2.运行暂停的容器: 
 `docker start [容器id(前4位就够了) 或者 name]`
 ## 3.暂停: 
