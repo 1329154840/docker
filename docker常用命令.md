@@ -6,8 +6,8 @@ docker ps -a                 所有进程
 docker ps -f status=exited   暂停的进行,status有up、exited
 docker ps -l                 最后一次运行的进程
 ```
-## 2.运行: 
-`docker run [容器id(前4位就够了) 或者 name]`
+## 2.运行暂停的容器: 
+`docker start [容器id(前4位就够了) 或者 name]`
 ## 3.暂停: 
 `docker stop [容器id(前4位就够了) 或者 name]`
 ## 4.查看容器日志: 
