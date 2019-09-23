@@ -1,7 +1,7 @@
 # docker内部常用命令
 ## 查看容器进程：
 ```
-docker ps		                  运行中的进程
+docker ps		            运行中的进程
 docker ps -a                 所有进程
 docker ps -f status=exited   暂停的进行,status有up、exited
 docker ps -l                 最后一次运行的进程
