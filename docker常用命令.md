@@ -1,13 +1,13 @@
 # docker常用命令
 ## 查看容器进程：
 `docker ps`  
-运行中的进程
+运行中的进程  
 `docker ps -a`  
-所有进程
+所有进程  
 `docker ps -f status=exited`  
-暂停的进行,status有up、exited
+暂停的进行,status有up、exited  
 `docker ps -l` 
-最后一次运行的进程
+最后一次运行的进程  
 ## 运行: 
 `docker run [容器id(前4位就够了) 或者 name]`
 ## 暂停: 
