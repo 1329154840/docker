@@ -48,7 +48,7 @@ docker ps -l                 最后一次运行的进程
 ## 14.将自己当前有的容器制作为镜像
 `docker commit [容器id(前4位就够了) 或者 name] [要生成的镜像名称]`
 ## 15.将镜像存在保存本地为.tar
-`docker save -o [镜像id 或者 仓库名] [本地路径以及文件名为.tar结尾]`
+`docker save -o [本地路径以及文件名为.tar结尾] [镜像id 或者 仓库名] `
 ## 16.将保存本地为.tar加载进镜像
 `docker load -i [本地路径以及文件名为.tar结尾]`
 # 对docker外部的命令（systemctl 在Centos7自带）
