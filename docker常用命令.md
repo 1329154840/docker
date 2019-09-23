@@ -1,9 +1,9 @@
 # docker内部常用命令
 ## 查看容器进程：
-(```)docker ps		运行中的进程
+(```docker ps		运行中的进程
 docker ps -a 所有进程
 docker ps -f status=exited 暂停的进行,status有up、exited
-docker ps -l   最后一次运行的进程(```)
+docker ps -l   最后一次运行的进程```)
 ## 运行: 
 `docker run [容器id(前4位就够了) 或者 name]`
 ## 暂停: 
@@ -38,9 +38,9 @@ docker ps -l   最后一次运行的进程(```)
 ## 将自己当前有的容器制作为镜像
 `docker commit [容器id(前4位就够了) 或者 name] [要生成的镜像名称]`
 # 对docker外部的命令
-(```)systemctl start docker		启动 docker
+(```systemctl start docker		启动 docker
 systemctl status docker		查看 docker 状态
 systemctl stop docker		停止 docker
 systemctl enable docker		开机自启
 docker info 			查看 docker 概要信息
-docker --help			查看 docker 帮助文档(```)
+docker --help			查看 docker 帮助文档```)
