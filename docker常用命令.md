@@ -22,8 +22,8 @@ docker ps -l                 最后一次运行的进程
 ## 8.搜索远端的镜像(私有还是公共看配置)
 `docker search`
 ## 9.进入对应容器里的bash: 
-`docker exec -it [容器id(前4位就够了) 或者 name] /bin/bash`   
-  注意这里有4种进入方式,这是守护式进入
+`docker exec -it [容器id(前4位就够了) 或者 name] /bin/bash`  
+推荐使用，这是守护式进入，剩下3种，attach多窗口单个阻塞其他也被阻塞了，SSH不合适，nsenter通过PID访问
 ## 10.运行新的images: 
 `docker run -i -d -p -v -t -e --name [容器id(前4位就够了) 或者 name]`
 ```
