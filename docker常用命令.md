@@ -25,7 +25,7 @@ docker ps -l                 最后一次运行的进程
 `docker exec -it [容器id(前4位就够了) 或者 name] /bin/bash`   
   注意这里有4种进入方式,这是守护式进入
 ## 运行新的images: 
-`docker run -i -d -p -v -t -e --name [容器id]`
+`docker run -i -d -p -v -t -e --name [容器id(前4位就够了) 或者 name]`
 ```
 -i       运行容器 
 -d       后台运行并启用守护 
