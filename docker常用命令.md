@@ -65,7 +65,7 @@ Options:
   接收容器文件到本机
 ## 12.容器或镜像元数据(可查ip）
 `docker inspect [容器id(前4位就够了) 或者 name]`  
-  --format 输出对应json value并进行格式化输出，例如 --format='{{.NetworkSettings.IPAddress}}'
+  --format 输出对应json value并进行格式化输出，例如 --format='IP: {{.NetworkSettings.IPAddress}}'
  ```
  {{.NetworkSettings.IPAddress}}   获取容器的IP
  {{.Name}}                        获取容器Name
