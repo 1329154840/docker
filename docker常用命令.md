@@ -7,7 +7,8 @@ docker ps -f status=exited   暂停的进行,created|restarting|running|paused|e
 docker ps -l                 最后一次运行的进程
 ```
 ```
-Usage: docker ps [OPTIONS]
+Usage: docker ps [OPTIONS]  
+
 Options:
   -a, --all             Show all containers (default shows just running)
   -f, --filter value    Filter output based on conditions provided (default [])
