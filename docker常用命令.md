@@ -124,3 +124,10 @@ systemctl enable docker		开机自启
 docker info 			查看 docker 概要信息
 docker --help			查看 docker 帮助文档
 ```
+# 对docker容器时区修改
+```
+docker exec -i -t [CONTAINNER] /bin/bash                进入容器
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 修改时间方法1
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime     修改时间方法2
+date -R                                                 检查时间
+```
